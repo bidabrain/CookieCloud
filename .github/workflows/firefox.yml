@@ -23,10 +23,6 @@ jobs:
         with:  
           node-version: '20.x'  
   
-
-  
-      - name: Install dependencies
-        run: pnpm install
   
       - name: build  
         run: cd extension && pnpm build --target=firefox-mv2
