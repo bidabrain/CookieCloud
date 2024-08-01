@@ -25,4 +25,4 @@ jobs:
   
   
       - name: build  
-        run: git clone https://github.com/easychen/CookieCloud.git && cd CookieCloud/extension && pnpm build --target=firefox-mv2
+        run: git clone https://github.com/easychen/CookieCloud.git && cd CookieCloud/extension && npm install plasmo &&pnpm build --target=firefox-mv2
