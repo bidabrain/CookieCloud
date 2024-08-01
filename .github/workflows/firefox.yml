@@ -25,4 +25,4 @@ jobs:
   
   
       - name: build  
-        run: cd extension && pnpm build --target=firefox-mv2
+        run: pwd && ls -ltrh && cd extension && pnpm build --target=firefox-mv2
