@@ -1,28 +1,32 @@
 name: firefox-extension
+
 on:
   push:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: pnpm/action-setup@v4
-      name: Install pnpm
-      with:
-        version: 8
-        run_install: false
 
-    - name: Install Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: 20
-        cache: 'pnpm'
 
-   - name: Install dependencies
-     run: pnpm install
-        
-  - uses: actions/checkout@v4
-  - name: Build extension
-    run: cd extension && pnpm build --target=firefox-mv2
+
+jobs:  
+  build:  
+    runs-on: ubuntu-latest  
+  
+    steps:  
+      - name: install pnpm  
+        uses: pnpm/action-setup@v4
+        with:
+          version: 8
+  
+      - name: Set up Node.js  
+        uses: actions/setup-node@v3  
+        with:  
+          node-version: '20.x'  
+  
+
+  
+      - name: Install dependencies
+        run: pnpm install
+  
+      - name: build  
+        run: cd extension && pnpm build --target=firefox-mv2
