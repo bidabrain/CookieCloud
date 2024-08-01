@@ -1,14 +1,11 @@
 name: firefox-extension
-
 on:
   push:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-
 jobs:
   build:
-    name: build
     runs-on: ubuntu-latest
     steps:
     - uses: pnpm/action-setup@v4
@@ -24,7 +21,7 @@ jobs:
         cache: 'pnpm'
 
    - name: Install dependencies
-       run: pnpm install
+     run: pnpm install
         
   - uses: actions/checkout@v4
   - name: Build extension
